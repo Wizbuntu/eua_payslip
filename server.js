@@ -31,12 +31,12 @@ app.use(bodyParser.json())
 app.use(fileupload());
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "public", "build")))
 
 // ...
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "public", "build", "index.html"));
 });
 
 
